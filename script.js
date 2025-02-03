@@ -13,9 +13,14 @@ x_twitterBtn.addEventListener("click", shareOnXTwitter)
 function randomQuote() {
     newQuoteBtn.classList.add("loading")
     newQuoteBtn.innerText = "Loading Quote.."
-    fetch("http://api.quotable.io/random").then(res => res.json()).then(result => {
-        quoteText.innerText = result.content
-        author.innerText = result.author
+    fetch("https://api.api-ninjas.com/v1/quotes", {
+        method: "GET",
+        headers: {
+            "X-Api-key": "SmOtameb9wLcsm0womwmnA==MhzqQvOfBIIcvzKz"
+        }
+    }).then(res => res.json()).then(result => {
+        quoteText.innerText = result[0].quote
+        author.innerText = result[0].author
         newQuoteBtn.innerText = "New Quote"
         newQuoteBtn.classList.remove("loading")
     })
