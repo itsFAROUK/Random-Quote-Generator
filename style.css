@@ -1,0 +1,131 @@
+:root {
+    --clr-primary: #5372f0;
+    --clr-secondary: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-weight: 400;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background: var(--clr-primary);
+}
+
+.wrapper {
+    width: 38em;
+    background: var(--clr-secondary);
+    border-radius: 15px;
+    padding: 1.8em;
+}
+
+.wrapper h1 {
+    font-size: 2.19rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.wrapper .content {
+    margin: 2.19em 0;
+}
+
+.content .quote::before {
+    font-family: 'Font Awesome 6 Free', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    content: '\f10d';
+    margin-right: 0.3125em;
+}
+
+.content .quote {
+    font-size: 1.375rem;
+    text-align: center;
+}
+
+.content .quote::after {
+    font-family: 'Font Awesome 6 Free', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    content: '\f10e';
+    margin-left: 0.3125em;
+}
+
+.content .author::before {
+    content: "__";
+    font-size: inherit;
+    font-family: monospace;
+    margin-top: -0.3em;
+}
+
+.content .author {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.25em;
+    font-size: 1.125rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.25em;
+}
+
+.btns button {
+    all: unset;
+    cursor: pointer;
+}
+
+.btns .features {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.btns .features li:not(.btns .features li:last-child) {
+    margin-right: 0.3125em;
+}
+
+.btns .features .btn {
+    width: 2.9375em;
+    height: 2.9375em;
+    border: 1px solid var(--clr-primary);
+    color: var(--clr-primary);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    transition: all 0.3s ease;
+}
+
+.btns .features .btn:hover {
+    background: var(--clr-primary);
+    color: var(--clr-secondary);
+}
+
+.btns .new-btn {
+    color: var(--clr-secondary);
+    background: var(--clr-primary);
+    padding: 0.8125em 1.375em;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btns .new-btn:hover {
+    opacity: 0.9;
+}
+
+.btns .new-btn.loading {
+    opacity: 0.8;
+}
